@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- TITLE + CHARSET + VIEWPORT -->
+    <title>Team: Non POS</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <script src="1-rolls.js"></script>
+    <script src="2-nigiri.js"></script>
+    <script src="3-drinks.js"></script>
+    <script src="menu.js"></script>
+    <script src="order_cart.js"></script>
+    <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="order_cart.css">
+  </head>
+  
+  <body>	
+    <!-- CART -->
+    <div class="banner">
+      <h1 class ="restaurant_name">Derek's Sushi</h1>
+    </div>
+    <div style="margin-top: 15px;"></div>
+    <div>
+        <button class="cart p-add" type="button" style="border-radius: 15px;"onclick="cart.rolls()">Rolls</button>
+        <div style="margin-top: 15px;"></div>
+        <button class="cart p-add" type="button"style="border-radius: 15px;" onclick="cart.nigiri()">Nigiri</button>
+        <div style="margin-top: 15px;"></div>
+        <button class="cart p-add" style="border-radius: 15px;" onclick="cart.drinks()">Drinks</button>
+        <div style="margin-top: 15px;"></div>
+    </div>
+    <br>    
+    <div id="cart-wrap">
+      <!-- PRODUCTS LIST -->
+      <div id="cart-products">
+        <h2>Welcome to Derek's Sushi<br></h2>
+          <button  onclick="cart.init(0)">For Here</button>
+          <button  onclick="cart.init(1)">To-Go</button>
+      </div>
+      <!-- CURRENT CART ITEMS -->
+      <div id="cart-items"></div>
+    </div>
+
+    
+    <!-- PRODUCT CELL Nodes -->
+    <template id="template-product">
+    <div class="p-item">
+      <img class="p-img"/>
+      <div class="p-name"></div>
+      <div class="p-desc"></div>
+      <div class="p-price"></div>
+      <button class="cart p-add">Add To Cart</button>
+    </div>
+    </template>
+
+    <!-- CART ITEMS Nodes -->
+    <template id="template-cart">
+    <div class="c-item">
+      <div class="c-name"></div>
+      <button class="c-del cart">X</button>
+      <input class="c-qty" type="number" min="0"/>
+    </div>
+    </template>
+
+    <template id="template-cart-checkout">
+      <button class="c-empty cart" onclick="cart.nuke()">Empty</button>
+      <button class="c-checkout cart" onclick="cart.checkout()">Checkout</button>
+    </template>
+
+    <template id="check-allotment">
+      <tr>
+        <td class="c-name"></td>
+        <td class="c-price"></td>
+      </tr>
+    </template>
+
+  </body>
+</html>

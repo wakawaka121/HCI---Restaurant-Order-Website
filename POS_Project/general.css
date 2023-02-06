@@ -1,0 +1,21 @@
+.banner {
+    width: 100%;
+    padding: 60px 0;
+    text-align: center;
+    background: #33cccc;
+    color: white;
+    border-radius: 15px;
+    background-image: url("images/sakura_banner.jpg");
+}
+
+.restaurant_name {
+    color: black;
+}
+
+.center_button{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    /* -ms-transform: translateX(-50%);
+    transform: translateX(-50%); */
+  }
